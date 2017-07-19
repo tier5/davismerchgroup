@@ -1,0 +1,120 @@
+/* 
+    Document   : projects.css
+    Created on : Oct 23, 2012, 5:12:15 PM
+    Author     : Rejith
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* projects - style */
+ul li {
+	background: url(images/accept.png) no-repeat left;
+	list-style: none;
+	padding: 3px 3px 3px 20px;
+	margin-left:10px;
+}
+
+ul, ol {
+	margin-bottom:10px;
+}
+ol li {
+	list-style: none;
+	padding: 10px 10px 5px;
+}
+ol li div.question {
+	font-weight:bold;
+	color:#ccc;
+	margin-bottom:2px;
+}
+
+a {
+	text-decoration: none;
+	color: #0066FF;
+}
+
+h1 {
+	font-size: 26px;
+	font-weight: normal;
+	margin: 0px;
+	color: #0099FF;
+}
+
+h2 {
+	font-size:15px;
+	font-weight:bold;
+	margin:15px 0 5px;	
+}
+
+.code {
+	background: #555;
+	padding: 10px;
+	margin-bottom: 10px;
+	display: none;
+	color: #eee;
+}
+
+.title {
+	background: #0099FF;
+	color: #fff;
+	padding: 10px;
+}
+
+.bborder {
+	background: #eee;
+	border: 0px solid #ccc;
+	padding: 3px;
+}
+
+.update {
+	border: 1px solid #777;
+	overflow: hidden;
+	margin-top:20px;
+}
+
+.update h3 {
+	margin:5px 0 5px 10px;
+	font-weight:bold;
+	font-size:1.1em;	
+}
+.update.fh {
+	height: auto;
+}
+
+.update p {
+	margin: 10px;
+}
+
+.update h2 {
+	cursor: pointer;
+	display: block;
+	padding: 5px;
+	color: #fff;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 2px;
+	border-left: 0px solid #06f;
+	border-bottom: 2px solid #0066FF;
+	font-weight:bold;
+	margin:0 0 3px;
+}
+
+.flexigrid div.fbutton .add {
+	background: url(./images/add.png) no-repeat center left;
+}
+
+.flexigrid div.fbutton .delete {
+	background: url(./images/close.png) no-repeat center left;
+}
+.project td{
+    height:25px;
+    padding:2px;
+}
+.project input[type="text"]{
+    height:20px;
+    padding:2px 0px 0px 2px;
+}
+.project select{
+    height:22px;
+    padding:2px 0px 0px 2px;
+}

@@ -1,0 +1,215 @@
+BODY {
+    COLOR: #303030; FONT-FAMILY: verdana, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: normal; background-color: #FFFFFF;
+}
+TD {
+    COLOR: #303030; FONT-FAMILY: verdana, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: normal
+}
+A:link {
+    COLOR: #737373; TEXT-DECORATION: none
+}
+A:visited {
+    COLOR: #737373; TEXT-DECORATION: none
+}
+A:active {
+    COLOR: #0074E0; TEXT-DECORATION: none; FONT-WEIGHT: bold
+}
+A:hover {
+    COLOR: #0074E0; TEXT-DECORATION: underline; FONT-WEIGHT: bold
+}
+.formfield1{
+    font : normal 11px Verdana, Arial, Helvetica, sans-serif;
+    color : Black;
+    background-color : #EAEAEA;
+    border : 1px solid Black;
+}
+hr {
+    border-top: 1px dashed #999999;
+    color: #ffffff;
+    height: 1px;
+} 
+td.menu {
+    color: #ffffff;
+    font : normal 11px Verdana, Arial, Helvetica, sans-serif;
+    padding-left: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-bottom:1px solid #FFFFFF;
+    background-color : #24abed;
+    cursor: hand;
+    cursor: pointer;
+}
+td.menu_on {
+    color: #ffffff;
+    font : normal 11px Verdana, Arial, Helvetica, sans-serif;
+    padding-left: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    border-bottom:1px solid #FFFFFF;
+    background-color : #0e88db;
+    cursor:hand;
+    cursor: pointer;
+}
+td.color1 {
+    background-color : #f0f0f0;
+}
+td.color2 {
+    color: #000;
+    background-color : #f0f0f0;
+    FONT-WEIGHT: bold
+}
+img {border-width:0;}
+.gridWhite{
+    background-color:#FFFFFF;
+    font-family:Tahoma, Verdana, Arial, Helvetica;
+    font-size:12px;
+    color:#000000;
+    padding-left:10px;}
+.grid001{
+    background-image:url(images/headerbg.jpg);
+    font-family:Tahoma, Verdana, Arial, Helvetica;
+    color:#000033;
+    font-size:12px;
+    font-weight:bold;
+    padding-top:10px;
+    padding-left:10px;}
+
+.textBox{
+    font-family:Tahoma, Verdana, Arial, Helvetica;
+    font-size:11px;
+    height:20px;
+    color:#333333;
+    width:150px;
+    border:solid 1px #666666;}
+
+.txtColor{
+    font-family:Tahoma, Verdana, Arial, Helvetica;
+    font-size:11px;
+    height:20px;
+    color:#333333;
+    width:100px;
+    border:solid 1px #666666;}
+.comboBox{
+    font-family:Tahoma, Verdana, Arial, Helvetica;
+    font-size:11px;
+    height:20px;
+    color:#333333;
+    border:solid 1px #666666;}
+
+.textArea{
+    width:150px;
+    font-family:Tahoma, Verdana, Arial, Helvetica;
+    font-size:11px;
+    height:250px;
+    color:#333333;
+    border:solid 1px #666666;}
+.tr_hide{
+    display:none;
+}
+.tr_visible{
+    display:block;
+}
+.readonly{
+    font-family:Tahoma, Verdana, Arial, Helvetica;
+    font-size:11px;
+    height:20px;
+    color:#333333;
+    width:150px;
+    background-color:#FF9;
+    border:solid 1px #666666;}
+/*pagination*/
+.disabled  {
+    color:#000000;
+    font-weight:bold;
+    padding:0px 4px 0px 4px;
+}
+.current {
+    color:#CC0000;
+    font-weight:bold;
+    padding:0px 4px 0px 4px;
+}
+.pagination a {
+    color:#000000 !important;
+    font-weight:bold !important;
+    padding:0px 4px 0px 4px;	
+}
+
+.pagination a.hover, .pagination a.visited {
+    color:#CC0000 !important;
+    font-weight:bold !important;
+    padding:0px 4px 0px 4px;	
+}
+/*pagination end */
+/*custome style strats here */
+.message_fixed{
+    width:200px;
+    text-align: center;
+    visibility: hidden;
+    z-index:9999;
+    color:#FFFFFF;
+    font-size:12px;
+    font-weight:bolder;
+    position: fixed;
+    padding:5px;
+    top:150px;
+    right:10px;
+    zoom: 1;
+    filter: alpha(opacity=90);
+    opacity: 0.9;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+.lightup {
+    border-color: #FFFFFF; !important;
+    background-color: #FFFFFF; !important;
+}
+.reports{
+    width:990px;
+    overflow:scroll;}
+#message.success{
+    background-color: #09911b;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+#message.error{
+    background-color: #CC0000;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+.hand{
+    cursor: pointer;
+    cursor: hand;
+    padding-left: 10px;
+}
+.PopBoxImageSmall
+{
+    z-index: 1000;
+    border: none 0px #ffffff;
+    cursor: url("images/magplus.cur"), pointer;
+}
+.PopBoxImageLarge
+{
+    z-index: 1000;
+    border: solid 1px #999999;
+    cursor: url("images/magminus.cur"), pointer;
+}
+.PopBoxImageShrink
+{
+    z-index: 1000;
+    cursor: url("images/magminus.cur"), pointer;
+}
+.PopBoxImageLink
+{
+    z-index: 1000;
+    cursor: pointer;
+}
+.PopBoxImageMove
+{
+    z-index: 1000;
+    border: none 0px #ffffff;
+    cursor: pointer;
+}.dd {
+	font-family: rrr;
+}
+.fsd{ padding:10px; margin:10px; border:1px solid #999999;}
