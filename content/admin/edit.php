@@ -187,6 +187,16 @@ pg_free_result($result);
 	echo "<td align=\"left\"><input type=\"text\" name=\"clockinid\" value=\"".$data1['clockinid']."\" size=\"20\"></td>";
 	echo "</tr>";
 
+	echo "<tr>";
+	echo "<td align=\"right\"><font face=\"arial\"><b>Mileage</b></font></td>";
+	echo "<td align=\"left\">Yes<input type=\"radio\" name=\"mileage\" value=\"1\"> / No<input type=\"radio\" name=\"mileage\" value=\"0\"></td>";
+	echo "</tr>";
+	
+	echo "<tr>";
+	echo "<td align=\"right\"><font face=\"arial\"><b>Mileage Deduction</b></font></td>";
+	echo "<td align=\"left\">-0<input type=\"radio\" name=\"mileage_deduction\" value=\"0\"> / -30<input type=\"radio\" name=\"mileage_deduction\" value=\"30\"> / -60<input type=\"radio\" name=\"mileage_deduction\" value=\"60\"> / -75<input type=\"radio\" name=\"mileage_deduction\" value=\"75\"></td>";
+	echo "</tr>";
+
 	echo "</table>";
 echo "<input type=\"hidden\" name=\"employeeID\" value=\"".$data1['employeeID']."\">";
 echo "<table width=\"80%\">";

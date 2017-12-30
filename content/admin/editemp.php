@@ -68,6 +68,15 @@ $usernamenew=$_POST['usernamenew'];
 $passwordnew=$_POST['passwordnew'];
 $poppassword=$_POST['poppassword'];
 $clockinid = $_POST['clockinid'];
+$mileage = 0;
+if(isset($_POST['mileage'])){
+	$mileage = $_POST['mileage'];
+}
+
+$mileage_deduction = 0;
+if(isset($_POST['mileage_deduction'])){
+	$mileage_deduction = $_POST['mileage_deduction'];
+}
 
 $empid=$_POST['employeeID'];
 if(isset($debug) AND $debug == "on"){
@@ -145,6 +154,8 @@ $query1="UPDATE \"employeeDB\" SET \"firstname\" = '$firstname', \"lastname\" = 
 		 "\"password\" = '$passwordnew', ".
 		 "\"poppassword\" = '$poppassword', ".
 		 "\"clockinid\" = '$clockinid', ".
+		 "mileage = '$mileage', ".
+		 "mileage_deduction = '$mileage_deduction', ".
 		 /*"\"emp_type\" = '$emp_type', ".*/
 		 
 		 "\"active\" = 'yes' ".
