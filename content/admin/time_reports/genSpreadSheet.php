@@ -159,19 +159,22 @@ $objPHPExcel->setActiveSheetIndex(0)->getStyle('A'.$ex_cl_i)->getFont()->setBold
 $ex_cl_i+=1;
 $border_row[]=$ex_cl_i;
 $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A'.$ex_cl_i,'Date');
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('B'.$ex_cl_i ,'Employee');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('B'.$ex_cl_i ,'Job Id');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('C'.$ex_cl_i ,'Employee');
 
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('C'.$ex_cl_i,'Client');
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('D'.$ex_cl_i,'Store Name');
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('E'.$ex_cl_i,'Store Number');
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('F'.$ex_cl_i,'Start time');
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('G'.$ex_cl_i,'Lunch(hrs)');
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('H'.$ex_cl_i,'End Time');
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('I'.$ex_cl_i,'Hours Worked');
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('J'.$ex_cl_i,'Mileage');
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('K'.$ex_cl_i,'Total Mile');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('D'.$ex_cl_i,'Client');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('E'.$ex_cl_i,'Store Name');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('F'.$ex_cl_i,'Store Number');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('G'.$ex_cl_i,'Start time');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('H'.$ex_cl_i ,'1st Break');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('I'.$ex_cl_i,'Lunch(hrs)');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('J'.$ex_cl_i ,'2nd Break');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('K'.$ex_cl_i,'End Time');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('L'.$ex_cl_i,'Hours Worked');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('M'.$ex_cl_i,'Mileage');
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('N'.$ex_cl_i,'Total Mile');
 
- $objPHPExcel->setActiveSheetIndex(0)->getStyle('A'.$ex_cl_i.':K'.$ex_cl_i)->getFont()->setBold('true');
+ $objPHPExcel->setActiveSheetIndex(0)->getStyle('A'.$ex_cl_i.':N'.$ex_cl_i)->getFont()->setBold('true');
  $ex_cl_i+=1;
  
 //print_r($datalist);
@@ -199,18 +202,20 @@ for($i=0; $i < count($datalist); $i++)
    $milage= ($datalist[$i]['daily_total']*$mileage_rate);
    if($milage<0) $milage=0;
    }
+//   echo "<pre>";print_r($datalist[$i]);
 $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A'.$ex_cl_i,str_replace('"','""',$datalist[$i]['st_date'].(($datalist[$i]['status']==3)?' (Generated)':''))); 
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('B'.$ex_cl_i,(str_replace('"','""',$datalist[$i]['firstname'].' '.$datalist[$i]['lastname'])));
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('C'.$ex_cl_i,(str_replace('"','""',$datalist[$i]['client']))); 
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('D'.$ex_cl_i,rtrim(str_replace('"','""',$storename_cust))); 
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('E'.$ex_cl_i,rtrim(str_replace('"','""',$storenum_cust))); 
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('B'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['pid'])));
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('C'.$ex_cl_i,(str_replace('"','""',$datalist[$i]['firstname'].' '.$datalist[$i]['lastname'])));
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('D'.$ex_cl_i,(str_replace('"','""',$datalist[$i]['client']))); 
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('E'.$ex_cl_i,rtrim(str_replace('"','""',$storename_cust))); 
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('F'.$ex_cl_i,rtrim(str_replace('"','""',$storenum_cust))); 
               
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('F'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['st_time']))); 
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('G'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['lunch_hrs']))); 
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('H'.$ex_cl_i,rtrim(str_replace('"','""',(($datalist[$i]['end_time_yr']>2000)?$datalist[$i]['end_time']:'')))); 
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('I'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['hours_worked'])));
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('J'.$ex_cl_i,rtrim(str_replace('"','""',round($milage,2)))); 
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('K'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['daily_total'])));
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('G'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['st_time']))); 
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('I'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['lunch_hrs']))); 
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('K'.$ex_cl_i,rtrim(str_replace('"','""',(($datalist[$i]['end_time_yr']>2000)?$datalist[$i]['end_time']:'')))); 
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('L'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['hours_worked'])));
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('M'.$ex_cl_i,rtrim(str_replace('"','""',round($milage,2)))); 
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('N'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['daily_total'])));
 
 $border_row[]=$ex_cl_i;
 	
@@ -218,7 +223,7 @@ $ex_cl_i+=1;
 }
         foreach($border_row as $row)
         {
-     $objPHPExcel->getActiveSheet()->getStyle('A'.$row.':K'.$row)->applyFromArray($styleArray);       
+     $objPHPExcel->getActiveSheet()->getStyle('A'.$row.':N'.$row)->applyFromArray($styleArray);       
         }
 unset($styleArray);
 

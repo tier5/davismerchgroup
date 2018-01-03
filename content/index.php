@@ -83,7 +83,7 @@ if (isset($_SESSION['emp_type']) && $_SESSION['emp_type'] != '' && $_SESSION['em
 	pg_free_result($result);
     
 	$srch_sql = '';
-	if ($_SESSION['perm_manager'] == "on" || $_SESSION['perm_admin'] == "on"){
+	if ($_SESSION['perm_admin'] == "on"){
     
 	} else {
 		$srch_sql = " AND (m.merch=" . $_SESSION['employeeID'] . " OR prj.created_by=" . $_SESSION['employeeID'] . ") ";
@@ -326,12 +326,13 @@ if (isset($_SESSION['emp_type']) && $_SESSION['emp_type'] != '' && $_SESSION['em
 					$m_prev_f=0;       
 					for($j=0;$j<$cnt;$j++)
 					{
-						if($this_week_sch[$j]['merch']==$week['merch']&&$this_week_sch[$j]['due_date']==$week['due_date']&&$this_week_sch[$j]['st_time']==$week['st_time'])
+						if($this_week_sch[$j]['merch']==$week['merch']&&$this_week_sch[$j]['due_date']==$week['due_date']&&$this_week_sch[$j]['st_time']==$week['st_time'] )
 						{
 							$m_prev_f=1;     
 						}    
 					}
 
+					//echo $m_prev_f;
 					?>
 				<tr <?php if($m_prev_f==1) {echo ' style="display:none;" ';}?> height="30px" <?php if ($c_flag == 1)
 				{
