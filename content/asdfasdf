@@ -1,0 +1,104 @@
+dtbl_timesheet	timeclock_new
+
+time_id		id
+start_time	clockin
+end_time	clockout
+:emp_id		emp_id		EmployeeDB.employeeID
+store		store		prj_merchants_new.location		3 40 40 40 40
+hours_worked	hours_worked
+reg_hours	reg_hours
+ot_hours	ot_hours
+break1		break1
+break2		break2
+lunch_start	lunch_start	0
+lunch_end	lunch_end	0
+lunch_hrs	lunch_hrs	0
+store_num	store_num	prj_merchants_new.store_num		5 10425 10428 10424 10426
+status		approval	0
+company_rep	company_rep	NULL
+client		client		clientDB.client				Davis Merch Group, Davis Merch Group, Crossmark, Davis Merch Group, Davis Merch Group
+lunch_time	lunch_time	0
+other		other		NULL
+dt_hours	dt_hours	NULL
+pid		pid		projects.pid				48840, 48898, 48900, 48901, 48910
+m_id		m_id		prj_merchants_new.m_id			120831, 120932, 120937, 120941, 120961
+
+prj_merchants_new.pid 		==	projects.pid
+prj_merchants_new.location 	== 	tbl_chain.ch_id
+prj_merchants_new.cid		==	clientDB.ID				10859
+tbl_chainmanagement.chain_id	==	prj_merchants_new.store_num
+project_main.m_pid		==	projects.m_pid
+employeeDB.employeeID		==	prj_merchants_new.merch
+
+projects.pid - 49107		projects.prj_name - 48957
+
+Martin Kenney		1089		clientDB.client - 7up Bottling Co	clientDB.ID - 5
+Jenifer Browder		3		clientDB.client - Frito Lay		clientDB.ID - 9
+
+
+projects, prj_merchants, tbl_chain, tbl_chainmanagement, project_main
+
+prj_merchants_new where pid = 48900    merch = 491, 115, 426   prj_name = 48750
+
+
+submit_merch_num.php
+project_submit.php
+
+
+$grand_total = bcadd($pre_total, $total);
+$rt = 0;
+$ot = 0;
+$dt = 0;
+
+if($pre_total >= 28800){ // 8 hours
+	if($pre_total >= 43200){ // 12 hours
+		$dt = $total;
+	}elseif($grand_total >= 43200){
+
+		$pre_ot = bcsub($pre_total, 28800);
+		$ot = bcsub(14400, $pre_ot); // to get OT for this clockout
+		$dt = bcsub($grand_total, 43200); // to get DT for this clockout
+	}else{
+		$ot = $total;
+	}
+}elseif($grand_total >= 28800){
+
+	if($grand_total >= 43200){ // $total is RT OT and DT
+
+		$rt = bcsub(28800, $pre_total); // this would be regular time
+		$ot = 14400; // I know this because grand_total is over 43200 but pre_total was under 28800
+		$dt = bcsub($grand_total, 43200); 
+	}else{ // $total is RT and OT
+		$rt = bcsub(28800, $pre_total);
+		$ot = bcsub($grand_total, 28800);
+	}
+}else{
+	$rt = $total;
+}
+
+
+1		status
+0		total
+0		clockout
+0		break
+0		lunch
+0		eod
+0		reg_hours
+0		ot_hours
+0		dt_hours
+1509778800  	workday
+1509811150	clockin
+
+$hours_worked = 0;
+
+if($total != 0){
+        $hours_worked = bcdiv(bcdiv($total, 60, 2), 60, 2);
+}
+
+"hours_worked = '$hours_worked', ".
+
+
+GLVAR 			website i think
+online bill pay		rappatoni
+class registration	rappatoni
+
