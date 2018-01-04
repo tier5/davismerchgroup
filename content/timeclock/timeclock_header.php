@@ -46,7 +46,6 @@ A:hover {
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tbody><tr>
 <td background="images/tbg.gif"><img src="images/ttop.gif" width="550" height="164" border="0"></td>
-<td><a href="<?php echo $mydirectory."/index.php";?>"><input type="button" value="Home"></a></td>
 </tr>
 </tbody></table>
 
