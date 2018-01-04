@@ -9,6 +9,12 @@ if($prj_name == ""){
 
 ?>
 
+<table align="right">
+	<tr>
+		<td><a href="<?php echo $mydirectory."/index.php";?>"><img src="<?php echo $mydirectory."/images/top01.gif";?>"></a></td>
+	</tr>
+</table>
+
 <script type="text/javascript">
 function addCode(key){
 	var code = document.forms[0].code;

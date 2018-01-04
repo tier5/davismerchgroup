@@ -97,6 +97,7 @@ while($row = pg_fetch_array($result))
 	$datalist[]=$row;
 }
 pg_free_result($result);
+//echo "<pre>";
 //print_r($datalist);
 
 
@@ -210,8 +211,12 @@ $objPHPExcel->setActiveSheetIndex(0)->setCellValue('D'.$ex_cl_i,(str_replace('"'
 $objPHPExcel->setActiveSheetIndex(0)->setCellValue('E'.$ex_cl_i,rtrim(str_replace('"','""',$storename_cust))); 
 $objPHPExcel->setActiveSheetIndex(0)->setCellValue('F'.$ex_cl_i,rtrim(str_replace('"','""',$storenum_cust))); 
               
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('G'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['st_time']))); 
-$objPHPExcel->setActiveSheetIndex(0)->setCellValue('I'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['lunch_hrs']))); 
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('G'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['st_time'])));
+$break1 = ($datalist[$i]['break1'] =="0"?"":"X");
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('H'.$ex_cl_i,rtrim(str_replace('"','""',$break1))); 
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('I'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['lunch_hrs'])));
+$break2 = ($datalist[$i]['break2'] =="0"?"":"X");
+$objPHPExcel->setActiveSheetIndex(0)->setCellValue('J'.$ex_cl_i,rtrim(str_replace('"','""',$break2))); 
 $objPHPExcel->setActiveSheetIndex(0)->setCellValue('K'.$ex_cl_i,rtrim(str_replace('"','""',(($datalist[$i]['end_time_yr']>2000)?$datalist[$i]['end_time']:'')))); 
 $objPHPExcel->setActiveSheetIndex(0)->setCellValue('L'.$ex_cl_i,rtrim(str_replace('"','""',$datalist[$i]['hours_worked'])));
 $objPHPExcel->setActiveSheetIndex(0)->setCellValue('M'.$ex_cl_i,rtrim(str_replace('"','""',round($milage,2)))); 
