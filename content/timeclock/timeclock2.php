@@ -128,7 +128,7 @@ if(count($data1) != '1'){
 			}
 	
 			echo "<meta http-equiv=\"refresh\" content=\"2;timeclock1.php?prj_name=$prj_name\">";
-			echo "Clocked in 1 ";
+			echo "Start of day ";
 		}else{
 	
 			$clocked_in = 0;
@@ -176,7 +176,7 @@ if(count($data1) != '1'){
 				}
 	
 				echo "<meta http-equiv=\"refresh\" content=\"2;timeclock1.php?prj_name=$prj_name\">";
-				echo "Clocked in 2";
+				echo "End of Lunch";
 	
 			}elseif($eod == 1){
 	
@@ -203,7 +203,7 @@ if(count($data1) != '1'){
 	
 				echo "<table align=\"center\">";
 	
-				if($break1 == 0){
+				if($break1 == 0 AND $total >= 7200){ // 2 hours
 					echo "<tr>";
 					echo "<td><font size=\"50px\"><b>Take Break 1:</b></td>";
 					echo "<td><input type=\"radio\" name=\"clockout_type\" value=\"1\"></td>";
