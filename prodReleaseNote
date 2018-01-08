@@ -9,6 +9,11 @@ Permission V1.0 Stable Released
 	New field in time reports
         Button integrated
 
-Breaktime V0.1 stable released to dev
+Breaktime V0.1 stable released to prod
 	Implemented dynamic breaktime column
 	Added home button in timeclock page
+
+Breaktime V1.0 stabke released to prod
+	Enabled first break after 2 hours
+	Enabled lunch hours after 4 hours
+	Modified texts in clock in and clock out time
