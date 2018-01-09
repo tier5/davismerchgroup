@@ -38,6 +38,7 @@ body {
 #keypad {
 	margin:auto; 
 	margin-top:20px;
+	padding-left:6%;
 }
 
 #keypad tr td {

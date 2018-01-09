@@ -60,6 +60,22 @@ while($row1 = pg_fetch_array($result1)){
 	$data1[] = $row1;
 }
 
+$employeeID = $data1[0]['employeeID'];
+
+$query11 = ("SELECT \"employeeID\", firstname, lastname ".
+	"FROM \"employeeDB\" ".
+	"WHERE  \"employeeID\" = '$employeeID' ");
+
+if(!($result11 = pg_query($connection,$query11))){
+	print("Failed query11: $query11 " . pg_last_error($connection));
+	exit;
+}
+
+while($row11 = pg_fetch_array($result11)){
+	$data11[] = $row11;
+}
+
+
 require("./timeclock_header.php");
 
 //echo "code = $code <br>";
@@ -128,7 +144,7 @@ if(count($data1) != '1'){
 			}
 	
 			echo "<meta http-equiv=\"refresh\" content=\"2;timeclock1.php?prj_name=$prj_name\">";
-			echo "Start of day ";
+			echo "(".$data11[0]['firstname']." ".$data11[0]['lastname'].") Start of day ";
 		}else{
 	
 			$clocked_in = 0;
@@ -176,7 +192,7 @@ if(count($data1) != '1'){
 				}
 	
 				echo "<meta http-equiv=\"refresh\" content=\"2;timeclock1.php?prj_name=$prj_name\">";
-				echo "End of Lunch";
+				echo "(".$data11[0]['firstname']." ".$data11[0]['lastname'].") End of Lunch";
 	
 			}elseif($eod == 1){
 	
@@ -203,7 +219,7 @@ if(count($data1) != '1'){
 	
 				echo "<table align=\"center\">";
 	
-				if($break1 == 0 AND $total >= 7200){ // 2 hours
+				if($break1 == 0 AND $total >= 5400){ // 1 & 1/2 hours
 					echo "<tr>";
 					echo "<td><font size=\"50px\"><b>Take Break 1:</b></td>";
 					echo "<td><input type=\"radio\" name=\"clockout_type\" value=\"1\"></td>";
