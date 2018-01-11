@@ -21,3 +21,7 @@ Breaktime V1.0 stable released to prod
 Breaktime V2.0 stable released to prod
         Modified first break after 1 & 1/2 hours
         Added employee name with "Start of day" & "End of lunch"
+
+Timecard report V0.1 stable released to prod
+        Added "Address" & "City" column  in time card report
+
