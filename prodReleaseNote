@@ -25,3 +25,6 @@ Breaktime V2.0 stable released to prod
 Timecard report V0.1 stable released to prod
         Added "Address" & "City" column  in time card report
 
+Import stores V0.1 stable released to prod
+        Implemented csv import feature for stores list
+
