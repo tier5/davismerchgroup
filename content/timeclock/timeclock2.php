@@ -34,6 +34,7 @@ $workday_set_month = date("n", $now);
 $workday_set_day = date("j", $now);
 $workday_set_year = date("Y", $now);
 $workday_set = mktime(0, 0, 0, $workday_set_month, $workday_set_day, $workday_set_year);
+$next_workday_set = $workday_set + 86400;
 $over_24hours = $now - 86400;
 
 $query0 = ("SELECT pid, prj_name ".
@@ -116,7 +117,7 @@ if(count($data1) != '1'){
 	
 		$query2 = ("SELECT id, emp_id, prj_name, status, total, workday, clockin, break1, lunch, break2, eod ".
 			"FROM timeclock_new ".
-			"WHERE emp_id = '".$data1[0]['employeeID']."' AND prj_name = '$prj_name' AND workday = '$workday_set' ");
+			"WHERE emp_id = '".$data1[0]['employeeID']."' AND prj_name = '$prj_name' AND workday >= '$workday_set' AND workday<= $next_workday_set");
 		if(!($result2 = pg_query($connection,$query2))){
 			print("Failed query2: $query2 " . pg_last_error($connection));
 			exit;

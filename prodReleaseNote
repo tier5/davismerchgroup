@@ -28,3 +28,6 @@ Timecard report V0.1 stable released to prod
 Import stores V0.1 stable released to prod
         Implemented csv import feature for stores list
 
+Breaktime V1.1 stable released to prod
+        Fixed break time issue for night shift guys.
+
