@@ -30,6 +30,7 @@ $prj_name = $_POST['prj_name'];
 
 // 24 hours = 86400
 $now = time();
+$time_before_12_hours = $now - 43200;
 $workday_set_month = date("n", $now);
 $workday_set_day = date("j", $now);
 $workday_set_year = date("Y", $now);
@@ -117,7 +118,7 @@ if(count($data1) != '1'){
 	
 		$query2 = ("SELECT id, emp_id, prj_name, status, total, workday, clockin, break1, lunch, break2, eod ".
 			"FROM timeclock_new ".
-			"WHERE emp_id = '".$data1[0]['employeeID']."' AND prj_name = '$prj_name' AND workday >= '$workday_set' AND workday<= $next_workday_set");
+			"WHERE emp_id = '".$data1[0]['employeeID']."' AND prj_name = '$prj_name' AND clockin >= '$time_before_12_hours' ");
 		if(!($result2 = pg_query($connection,$query2))){
 			print("Failed query2: $query2 " . pg_last_error($connection));
 			exit;
