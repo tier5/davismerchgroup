@@ -31,3 +31,5 @@ Import stores V0.1 stable released to prod
 Breaktime V1.1 stable released to prod
         Fixed break time issue for night shift guys.
 
+Import stores V0.2 stable released to prod
+        Implemented csv import feature for QuikTrip stores list

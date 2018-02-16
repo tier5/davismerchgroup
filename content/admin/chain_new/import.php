@@ -12,19 +12,35 @@ if(isset($_POST["Import"])){
 	{
 		$file = fopen($filename, "r");
 		$i = 0;
+
+		$queryapp1="INSERT INTO tbl_chain (chain, status) VALUES ('Quik Trip','1') RETURNING *";
+
+		if(!($resultapp1=pg_query($connection,$queryapp1))){
+			print("Failed resultapp1: " . pg_last_error($connection));
+			exit;
+		}
+		$rowapp1 = pg_fetch_array($resultapp1);
+
 		while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
 		{
 			$i++;
 
 			//echo "<pre>";
 			//echo $i;
-			if($i>2){
-				//print_r($getData);
-				$st_name = "64";
-				$store = $getData[0];
-				$address = $getData[1];
-				$city = $getData[3];
-				$state = $getData[4];
+			if($i>1){
+				
+				$ex = explode(",", $getData[2]);
+				
+				$state_zip = explode(" ", $ex[2]);
+
+
+				$st_name = $rowapp1['ch_id'];
+				$store = $getData[1];
+				$address =  $ex[0];
+				$city = $ex[1];
+				$state = $state_zip[1];
+				$zip = $state_zip[2];
+
 
 				$sql="INSERT INTO tbl_chainmanagement (";
 		
