@@ -33,3 +33,6 @@ Breaktime V1.1 stable released to prod
 
 Import stores V0.2 stable released to prod
         Implemented csv import feature for QuikTrip stores list
+
+Breaktime V1.2 stable released to prod
+	Changed lunch break time 4 hrs to 5 hrs

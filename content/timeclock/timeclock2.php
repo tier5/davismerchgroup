@@ -228,8 +228,8 @@ if(count($data1) != '1'){
 					echo "</tr>";
 				}
 	
-				//if($lunch == 0 AND $total >= 18000){ // 5 hours
-				if($lunch == 0 AND $total >= 14400){ // 4 hours
+				if($lunch == 0 AND $total >= 18000){ // 5 hours
+//				if($lunch == 0 AND $total >= 14400){ // 4 hours
 					echo "<tr>";
 					echo "<td><font size=\"50px\"><b>Take Lunch:</b></td>";
 					echo "<td><input type=\"radio\" name=\"clockout_type\" value=\"2\"></td>";
